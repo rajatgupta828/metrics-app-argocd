@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: stem-dp-stem-cd-env-controller
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: .
+spec:
+  destination:
+    namespace: stem-dp
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps/stem-cd
+    repoURL: git@bitbucket.org:stemedge/stem-argocd.git
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - clusters/values-eks-cicd2.yaml
+        - envs/stem-dp/values.yaml
+        - envs/stem-dp/values-versions.yaml
+  syncPolicy:
+    automated:
+      prune: true

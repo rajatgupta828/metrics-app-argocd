@@ -9,12 +9,6 @@ spec:
     chart: metrics-app
     repoURL: https://github.com/rajatgupta828/metrics-app-helm
     targetRevision: master
-    helm:
-      valueFiles:
-        - values.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: default
   syncPolicy:
     automated:
       prune: true

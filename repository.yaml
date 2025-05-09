@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Repository
+metadata:
+  name: metrics-app-argocd
+  namespace: argocd
+spec:
+  type: git
+  url: https://github.com/rajatgupta828/metrics-app-argocd
+  insecure: false 

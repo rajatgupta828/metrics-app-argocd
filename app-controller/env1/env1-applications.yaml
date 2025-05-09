@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: env1-applications
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: .
+spec:
+  destination:
+    namespace: crfat
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps
+    repoURL: https://github.com/rajatgupta828/metrics-app-argocd
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - overrides.yaml
+  syncPolicy:
+    automated:
+      prune: true
