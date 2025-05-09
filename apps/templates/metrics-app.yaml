@@ -8,6 +8,7 @@ spec:
   source:
     chart: metrics-app
     repoURL: https://github.com/rajatgupta828/metrics-app-helm
+    targetRevision: "0.1.0"
     helm:
       valueFiles:
         - overrides.yaml
