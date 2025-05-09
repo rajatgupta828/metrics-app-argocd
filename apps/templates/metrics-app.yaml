@@ -11,7 +11,7 @@ spec:
     path: .
     helm:
       valueFiles:
-        - overrides.yaml
+        - values.yaml
   destination:
     namespace: crfat
     server: https://kubernetes.default.svc
