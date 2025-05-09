@@ -9,6 +9,9 @@ spec:
     chart: metrics-app
     repoURL: https://github.com/rajatgupta828/metrics-app-helm
     targetRevision: master
+  destination:
+    namespace: crfat
+    server: https://kubernetes.default.svc
   syncPolicy:
     automated:
       prune: true
