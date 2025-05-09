@@ -13,7 +13,7 @@ spec:
   source:
     path: apps/stem-cd
     repoURL: git@bitbucket.org:stemedge/stem-argocd.git
-    targetRevision: HEAD
+    targetRevision: main
     helm:
       valueFiles:
         - clusters/values-eks-cicd2.yaml

@@ -13,7 +13,7 @@ spec:
   source:
     path: apps
     repoURL: https://github.com/rajatgupta828/metrics-app-argocd
-    targetRevision: HEAD
+    targetRevision: master
     helm:
       valueFiles:
         - overrides.yaml
